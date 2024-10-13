@@ -1,0 +1,78 @@
+.container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.open {
+    width: 250px;
+}
+
+.sidebarMenu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.searchContainer {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.searchContainer:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+}
+
+.sidebarMenuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebarMenuItem:hover {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navIconContainer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    color: white;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.hiddenLabel {
+    opacity: 0;
+    font-size: 0;
+    transition: opacity 0.3s ease;
+}

@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.swiperItem {
+    max-height: 200px;
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+}
