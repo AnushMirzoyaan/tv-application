@@ -25,13 +25,9 @@ interface FeaturedMovie {
 
 interface FeaturedVideoProps {
   featuredMovie: FeaturedMovie;
-  changePicToMovie: () => void;
 }
 
-const FeaturedVideo: React.FC<FeaturedVideoProps> = ({
-  featuredMovie,
-  changePicToMovie,
-}) => {
+const FeaturedVideo: React.FC<FeaturedVideoProps> = ({ featuredMovie }) => {
   return (
     <div className={styles.container}>
       <div
@@ -52,7 +48,7 @@ const FeaturedVideo: React.FC<FeaturedVideoProps> = ({
             {featuredMovie.Description}
           </div>
           <div className={styles.actionsContainer}>
-            <button className={styles.playButton} onClick={changePicToMovie}>
+            <button className={styles.playButton}>
               <FaPlay />
               <span>Play</span>
             </button>

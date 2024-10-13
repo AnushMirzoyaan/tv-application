@@ -1,21 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './index.module.css';
-import data from '../../utils/data.json';
+import data from '@/utils/data.json';
+import { Movie } from '@/utils/types';
 import TrendingNow from '../TrendingNowSection';
-import FeaturedVideo from '../FeaturedVideoSection';  
-
-interface Movie {
-  Id: string;
-  Title: string;
-  CoverImage: string;
-  Description: string;
-  Category: string;
-  ReleaseYear: string;
-  MpaRating: string;
-  Duration: number;
-}
-
+import FeaturedVideo from '../FeaturedVideoSection';
 
 interface FeaturedVideoProps {
   featuredMovie: Movie;
@@ -23,36 +12,20 @@ interface FeaturedVideoProps {
   changePicToMovie: () => void;
 }
 
-
 interface TrendingNowProps {
   handleMovieClick: (movie: Movie) => void;
 }
 const Home = () => {
-  const [featuredMovie, setFeaturedMovie] = useState(data.Featured); 
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false); 
-  const [trendingNow] = useState<Movie[]>(data.TendingNow); 
+  const [featuredMovie, setFeaturedMovie] = useState<Movie>(data.Featured);
+  const [trendingNow] = useState<Movie[]>(data.TendingNow);
 
-  const handleMovieClick = (movie:Movie) => {
-    setFeaturedMovie(movie); 
-    setIsVideoPlaying(false); 
-
-    
-    setTimeout(() => {
-      setIsVideoPlaying(true); 
-    }, 1000);
-  };
-
-  
-  const changePicToMovie = () => {
-    setIsVideoPlaying(true);
+  const handleMovieClick = (movie: Movie) => {
+    setFeaturedMovie(movie);
   };
 
   return (
     <div className={styles.container}>
-      <FeaturedVideo
-        featuredMovie={featuredMovie}
-        changePicToMovie={changePicToMovie}
-      />
+      <FeaturedVideo featuredMovie={featuredMovie} />
 
       <TrendingNow handleMovieClick={handleMovieClick} />
     </div>
